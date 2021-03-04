@@ -8,25 +8,41 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bitte gib deine Werte ein!"
+        android:layout_marginBottom="300dp"
+        android:text="Antwort vom Server:"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gib deine Matrikelnummer ein"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image1"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="40dp"
         android:contentDescription="Logo of AAU Klagenfurt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/aau_logo" />
@@ -37,27 +53,29 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="145dp"
         android:layout_marginEnd="145dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="108dp"
         android:backgroundTint="#206B78"
-        android:contentDescription="Ist klickbar"
-        android:text="Klick mich"
+        android:contentDescription="sendToServer"
+        android:text="Abschicken"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/InputText_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginBottom="396dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Matrikelnummer"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
