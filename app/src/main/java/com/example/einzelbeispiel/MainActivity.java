@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     Button button;
@@ -19,17 +21,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView aau;
     String result;
     TextView resultText;
-
-    Thread thread  = new Thread(new Runnable() {
-        @Override
-        public void run(){
-            try{
-                tcpConnection();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,22 +34,37 @@ public class MainActivity extends AppCompatActivity {
 
         startUpAnimation();
 
-        button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Log.i("MyApp","OnCLick Works");
-                Log.i("MyApp", mEdit.getText().toString());
-                startUpAnimation();
+        button.setOnClickListener((View v)->{
+                Thread thread = startThread();
+
+                Log.d("Debug Thread", ""+thread.isAlive());
+                Log.d("MyApp", mEdit.getText().toString());
+                textAppearanceAnimation();
 
                 thread.start();
-            }
         });
 
-        mEdit.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-                Log.v("EditText", mEdit.getText().toString());
+        mEdit.setOnClickListener((View v) -> {
+                Thread thread = startThread();
+                Log.d("EditText", mEdit.getText().toString());
+                textAppearanceAnimation();
+
                 thread.start();
+        });
+    }
+
+    private Thread startThread(){
+        Thread thread  = new Thread(new Runnable() {
+            @Override
+            public void run(){
+                try{
+                    tcpConnection();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         });
+        return thread;
     }
 
     private void startUpAnimation(){

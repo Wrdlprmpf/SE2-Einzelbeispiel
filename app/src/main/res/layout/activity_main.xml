@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
@@ -40,7 +39,9 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="40dp"
+        android:backgroundTint="#3C3F41"
         android:contentDescription="Logo of AAU Klagenfurt"
+        android:foregroundTint="#436F80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +55,7 @@
         android:layout_marginStart="145dp"
         android:layout_marginEnd="145dp"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="#206B78"
+        android:backgroundTint="#436F80"
         android:contentDescription="sendToServer"
         android:text="Abschicken"
         app:layout_constraintBottom_toBottomOf="parent"
